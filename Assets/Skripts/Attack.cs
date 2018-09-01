@@ -7,6 +7,11 @@ public class Attack : Skill
     int skillType = 3;
     int commonDmg = 50;
 
+    public Attack(GameObject user) : base(user)
+    {
+    }
+
+    //Puttin skill into a class
     public override Class ClassId
     {
         get
@@ -14,10 +19,12 @@ public class Attack : Skill
             return Class.COMMON;
         }
     }
-
+    
+    //what happens when skill is activated
     public override void Activate(GameObject[] targets)
     {
-        targets[0].GetComponent<Stats>().currentHP -= commonDmg;
+        targets[0].GetComponent<Stats>().currentHP -= (commonDmg * user.GetComponent<Stats>().critMulti);
+        targets[0].GetComponent<Animator>().SetTrigger("Attack");
     }
 
 }

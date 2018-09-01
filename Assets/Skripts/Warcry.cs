@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IronSkin : Skill
-{
-    public IronSkin(GameObject user) : base(user)
+public class Warcry : Skill {
+    public Warcry(GameObject user) : base(user)
     {
     }
 
@@ -15,9 +14,19 @@ public class IronSkin : Skill
             return Class.WARRIOR;
         }
     }
+    // Use this for initialization
+    void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
     public override void Activate(GameObject[] targets)
     {
         throw new System.NotImplementedException();
-        user.GetComponent<Animator>().SetTrigger("Attack");
     }
+
+   
 }

@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class CritBuff : Skill
 {
-    public int critPros;
+    int skillType = 2;
+    public int dmgMulti = 2;
+
+    public CritBuff(GameObject user) : base(user)
+    {
+    }
 
     public override Class ClassId
     {
@@ -15,6 +20,9 @@ public class CritBuff : Skill
     }
     public override void Activate(GameObject[] targets)
     {
-        throw new System.NotImplementedException();
+        user.GetComponent<Animator>().SetTrigger("Attack");
+        user.GetComponent<Stats>().crit = true;
+        user.GetComponent<Stats>().critCount = 1;
+        user.GetComponent<Stats>().critMulti = dmgMulti;
     }
 }

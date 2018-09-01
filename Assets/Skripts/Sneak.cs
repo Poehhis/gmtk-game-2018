@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sneak : MonoBehaviour {
+public class Sneak : Skill {
+    public Sneak(GameObject user) : base(user)
+    {
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public override Class ClassId
+    {
+        get
+        {
+            return Class.ARCHER;
+        }
+    }
+   
+    public override void Activate(GameObject[] targets)
+    {
+        user.GetComponent<Stats>().sneak = true;
+        user.GetComponent<Stats>().sneakCounter = 1;
+        user.GetComponent<Animator>().SetTrigger("Attack");
+    }
+
+    
 }
