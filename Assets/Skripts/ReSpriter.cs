@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class ReSpriter : MonoBehaviour
 {
-	public HeroType hat;
-	public HeroType shirt;
-	public HeroType hands;
+	public Class hat;
+	public Class shirt;
+	public Class hands;
 
-	Dictionary<HeroType, Sprite[]> sprites;
+	Dictionary<Class, Sprite[]> sprites;
 	SpriteRenderer hatRenderer;
 	SpriteRenderer shirtRenderer;
 	SpriteRenderer handsRenderer;
 
 	void Start ()
 	{
-		sprites = new Dictionary<HeroType, Sprite[]>();
-		sprites.Add(HeroType.WARRIOR, Resources.LoadAll<Sprite>("Sprites/Warrior"));
-		sprites.Add(HeroType.MAGE, Resources.LoadAll<Sprite>("Sprites/Mage"));
-		sprites.Add(HeroType.ARCHER, Resources.LoadAll<Sprite>("Sprites/Archer"));
+		sprites = new Dictionary<Class, Sprite[]>();
+		sprites.Add(Class.WARRIOR, Resources.LoadAll<Sprite>("Sprites/Warrior"));
+		sprites.Add(Class.MAGE, Resources.LoadAll<Sprite>("Sprites/Mage"));
+		sprites.Add(Class.ARCHER, Resources.LoadAll<Sprite>("Sprites/Archer"));
 
 		SpriteRenderer[] renderers = GetComponentsInChildren<SpriteRenderer>();
 		hatRenderer = Array.Find(renderers, it => it.gameObject.name == "Hat");
@@ -32,9 +32,4 @@ public class ReSpriter : MonoBehaviour
 		shirtRenderer.sprite = Array.Find(sprites[shirt], it => it.name == shirtRenderer.sprite.name);
 		handsRenderer.sprite = Array.Find(sprites[hands], it => it.name == handsRenderer.sprite.name);
 	}
-}
-
-public enum HeroType
-{
-	WARRIOR, MAGE, ARCHER
 }

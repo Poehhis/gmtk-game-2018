@@ -7,6 +7,10 @@ public class PowerSlam : Skill
     int skillType = 3;
     public int swordDmg=100;
 
+    public PowerSlam(GameObject user) : base(user)
+    {
+    }
+
     public override Class ClassId
     {
         get
@@ -16,6 +20,7 @@ public class PowerSlam : Skill
     }
     public override void Activate(GameObject[] targets)
     {
-        targets[0].GetComponent<Stats>().currentHP -= swordDmg;
+        targets[0].GetComponent<Stats>().currentHP -= (swordDmg * user.GetComponent<Stats>().critMulti);
+        targets[0].GetComponent<Animator>().SetTrigger("Attack");
     }
 }

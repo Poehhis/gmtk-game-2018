@@ -6,6 +6,11 @@ public class Heal : Skill
 {
 
     int healAmount;
+
+    public Heal(GameObject user) : base(user)
+    {
+    }
+
     public override Class ClassId
     {
         get
@@ -18,6 +23,7 @@ public class Heal : Skill
     {
         
         throw new System.NotImplementedException();
+        user.GetComponent<Animator>().SetTrigger("Attack");
     }
 
 }

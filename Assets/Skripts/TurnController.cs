@@ -10,8 +10,8 @@ public class TurnController : MonoBehaviour {
     GameObject[] players;
 	// Use this for initialization
 	void Start () {
-        hero.GetComponent<Stats>().activeSkills = new Skill[] { new Attack(), new Fireball(), new PowerSlam() };
-        boss.GetComponent<Stats>().activeSkills = new Skill[] { new Attack() };
+        hero.GetComponent<Stats>().activeSkills = new Skill[] { new Attack(hero), new CritBuff(hero), new Gatling(hero), new Sneak(hero) };
+        boss.GetComponent<Stats>().activeSkills = new Skill[] { new Attack(boss) };
         players = new GameObject[2];
         players[0] = hero;
         players[1] = boss;

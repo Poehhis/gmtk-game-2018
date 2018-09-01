@@ -4,6 +4,11 @@ using UnityEngine;
 
 public abstract class Skill
 {
+    protected GameObject user;
+    public Skill(GameObject user)
+    {
+        this.user = user;
+    }
     public abstract Class ClassId { get; }
     public abstract void Activate(GameObject[] targets);
 }
