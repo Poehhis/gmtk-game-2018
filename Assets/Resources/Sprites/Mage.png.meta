@@ -1,20 +1,17 @@
 fileFormatVersion: 2
-guid: 82c91e3b1ed41ea4390c365ef2c5e9b1
+guid: e1e5b2cdee811574c9abc9e72cbe9d39
 TextureImporter:
   fileIDToRecycleName:
-    21300000: warrior_0
-    21300002: warrior_1
-    21300004: warrior_2
-    21300006: warrior_3
-    21300008: warrior_4
-    21300010: warrior_5
-    21300012: warrior_6
-    21300014: warrior_7
-    21300016: warrior_8
-    21300018: warrior_9
-    21300020: warrior_10
-    21300022: warrior_11
-    21300024: warrior_12
+    21300000: shirt1
+    21300002: shirt2
+    21300004: hat1
+    21300006: hat2
+    21300008: hands1
+    21300010: hands2
+    21300012: attack1
+    21300014: attack2
+    21300016: attack3
+    21300018: attack4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -97,7 +94,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: warrior_0
+      name: shirt1
       rect:
         serializedVersion: 2
         x: 0
@@ -111,13 +108,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b888df4521179a947b842acba91cf40d
+      spriteID: 324f4677d716f4546970fc12244ede0d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_1
+      name: shirt2
       rect:
         serializedVersion: 2
         x: 128
@@ -131,13 +128,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a35ad78e34f6ea4690b81efda45f0db
+      spriteID: 6201196805acb0d469c670d1a0826371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_2
+      name: hat1
       rect:
         serializedVersion: 2
         x: 256
@@ -151,13 +148,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02112526f74b5614992ed3b0facd13eb
+      spriteID: 9facbb7977d623946bb6cb2bc3ab3a85
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_3
+      name: hat2
       rect:
         serializedVersion: 2
         x: 384
@@ -171,13 +168,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bf5b337258df4343bc2d469fcb2ba17
+      spriteID: 833ed716de07b42468516c7dc8e71ebc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_4
+      name: hands1
       rect:
         serializedVersion: 2
         x: 512
@@ -191,13 +188,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e4d7bcee90ca9a4ea79d9e8747bf361
+      spriteID: d56f053425b96cb4a8b96285acef5fbc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_6
+      name: hands2
       rect:
         serializedVersion: 2
         x: 768
@@ -211,13 +208,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 064fa82ef7bc7cf459c698333b3e2975
+      spriteID: c7e5c4134cdd15b46843635d98db83c2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_8
+      name: attack1
       rect:
         serializedVersion: 2
         x: 0
@@ -231,13 +228,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92de7168ec1a9f845837c20fed7c683e
+      spriteID: d69340221d0de0b419ca8b6cacae0ba3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_9
+      name: attack2
       rect:
         serializedVersion: 2
         x: 256
@@ -251,13 +248,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83ea50147953e2947bf780a11061844c
+      spriteID: 1ba59669b5027b348b309ec902182805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_10
+      name: attack3
       rect:
         serializedVersion: 2
         x: 512
@@ -271,13 +268,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47078f8501bb490409cfffcfecd3b474
+      spriteID: 553e6ee636c44d044a6390f77211d280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_12
+      name: attack4
       rect:
         serializedVersion: 2
         x: 768
@@ -291,7 +288,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd398ef64058eb54195f704339d60abf
+      spriteID: 5c226f0dc1e995548ad6ae21771a7267
       vertices: []
       indices: 
       edges: []
@@ -299,7 +296,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fb17d2f124ad22c4aba3c141fc15f8e6
+    spriteID: b91853143ef78d240b268ac38323d8ec
     vertices: []
     indices: 
     edges: []
