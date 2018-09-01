@@ -23,7 +23,7 @@ public class Gatling : Skill
     {
         int arrows = Random.Range(3, 6);
         int totalDmg = dmgSingle * arrows;
-        targets[0].GetComponent<Stats>().currentHP -=( totalDmg* user.GetComponent<Stats>().critMulti);
+        targets[0].GetComponent<Stats>().currentHP -= (int)( totalDmg* user.GetComponent<Stats>().critMulti);
         user.GetComponent<Animator>().SetTrigger("Attack");
     }
 }

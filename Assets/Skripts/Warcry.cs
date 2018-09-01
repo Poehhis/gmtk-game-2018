@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Warcry : Skill {
+
+    double dmgMulti = 1.33;
+
     public Warcry(GameObject user) : base(user)
     {
     }
@@ -14,18 +17,13 @@ public class Warcry : Skill {
             return Class.WARRIOR;
         }
     }
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+   
     public override void Activate(GameObject[] targets)
     {
-        throw new System.NotImplementedException();
+        user.GetComponent<Animator>().SetTrigger("Attack");
+        user.GetComponent<Stats>().crit = true;
+        user.GetComponent<Stats>().critCount = 3;
+        user.GetComponent<Stats>().critMulti = dmgMulti;
     }
 
    

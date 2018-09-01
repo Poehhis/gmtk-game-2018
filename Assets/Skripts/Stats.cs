@@ -13,11 +13,12 @@ public class Stats : MonoBehaviour
     public int sneakCounter = 0;
 
     public bool crit = false;
-    public int critMulti = 1;
+    public double critMulti = 1;
     public int critCount = 0; 
 
-    public bool warcry = false;
-    public int warCounter = 0;
+    //longer count time critical.
+    //public bool warcry = false;
+    //public int warCounter = 0;
 
     public bool barrier = false; 
 
@@ -32,6 +33,7 @@ public class Stats : MonoBehaviour
             if(_currentHP <= 0)
             {
                 alive = false;
+                GetComponent<Animator>().SetTrigger("Die");
             }
         }
     }

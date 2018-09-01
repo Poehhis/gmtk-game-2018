@@ -23,8 +23,8 @@ public class Attack : Skill
     //what happens when skill is activated
     public override void Activate(GameObject[] targets)
     {
-        targets[0].GetComponent<Stats>().currentHP -= (commonDmg * user.GetComponent<Stats>().critMulti);
-        targets[0].GetComponent<Animator>().SetTrigger("Attack");
+        targets[0].GetComponent<Stats>().currentHP -= (int)(commonDmg * user.GetComponent<Stats>().critMulti);
+        user.GetComponent<Animator>().SetTrigger("Attack");
     }
 
 }

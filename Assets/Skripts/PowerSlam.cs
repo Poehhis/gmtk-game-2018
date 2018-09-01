@@ -20,7 +20,7 @@ public class PowerSlam : Skill
     }
     public override void Activate(GameObject[] targets)
     {
-        targets[0].GetComponent<Stats>().currentHP -= (swordDmg * user.GetComponent<Stats>().critMulti);
-        targets[0].GetComponent<Animator>().SetTrigger("Attack");
+        targets[0].GetComponent<Stats>().currentHP -= (int)(swordDmg * user.GetComponent<Stats>().critMulti);
+        user.GetComponent<Animator>().SetTrigger("Attack");
     }
 }

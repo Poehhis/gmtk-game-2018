@@ -5,7 +5,7 @@ using UnityEngine;
 public class Barrier : Skill
 {
 
-    public int barrAmount;
+    public int barrAmount = 100;
 
     public Barrier(GameObject user) : base(user)
     {
@@ -20,7 +20,7 @@ public class Barrier : Skill
     }
     public override void Activate(GameObject[] targets)
     {
-        throw new System.NotImplementedException();
+        user.GetComponent<Stats>().currentHP += barrAmount;
         user.GetComponent<Animator>().SetTrigger("Attack");
     }
 }

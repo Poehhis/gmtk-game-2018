@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class IronSkin : Skill
 {
+    double dmgMulti = 0.6; 
+
     public IronSkin(GameObject user) : base(user)
     {
     }
@@ -17,7 +19,10 @@ public class IronSkin : Skill
     }
     public override void Activate(GameObject[] targets)
     {
-        throw new System.NotImplementedException();
+       
+        targets[0].GetComponent<Stats>().crit = true;
+        targets[0].GetComponent<Stats>().critCount = 3;
+        targets[0].GetComponent<Stats>().critMulti = dmgMulti;
         user.GetComponent<Animator>().SetTrigger("Attack");
     }
 }

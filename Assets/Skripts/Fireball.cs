@@ -21,9 +21,9 @@ public class Fireball : Skill
 
     public override void Activate(GameObject[] targets)
     {
-        targets[0].GetComponent<Stats>().currentHP -= (initDmg * user.GetComponent<Stats>().critMulti);
+        targets[0].GetComponent<Stats>().currentHP -= (int)(initDmg * user.GetComponent<Stats>().critMulti);
         targets[0].GetComponent<Stats>().burning = true;
         targets[0].GetComponent<Stats>().burnCounter = 3;
-        targets[0].GetComponent<Animator>().SetTrigger("Attack");
+        user.GetComponent<Animator>().SetTrigger("Attack");
     }
 }

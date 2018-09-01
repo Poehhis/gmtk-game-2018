@@ -5,7 +5,7 @@ using UnityEngine;
 public class Heal : Skill
 {
 
-    int healAmount;
+    int healAmount = 100;
 
     public Heal(GameObject user) : base(user)
     {
@@ -21,8 +21,7 @@ public class Heal : Skill
 
     public override void Activate(GameObject[] targets)
     {
-        
-        throw new System.NotImplementedException();
+        user.GetComponent<Stats>().currentHP = Mathf.Min(user.GetComponent<Stats>().maxHP, user.GetComponent<Stats>().currentHP + healAmount);
         user.GetComponent<Animator>().SetTrigger("Attack");
     }
 
