@@ -12,7 +12,8 @@ public class ActionController : MonoBehaviour {
     Stats stats;
     public GameObject dedScreen;
 	public string nextLevel;
-    
+
+	public GameObject credits;
     
     // Use this for initialization
     void Start () {
@@ -136,6 +137,10 @@ public class ActionController : MonoBehaviour {
 		{
 			GetComponent<Animator>().applyRootMotion = false;
 			GetComponent<Animator>().SetTrigger("Win");
+
+			yield return new WaitForSeconds(3f);
+
+			Instantiate(credits);
 		}
 	}
 

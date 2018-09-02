@@ -323,6 +323,7 @@ MonoBehaviour:
   characterType: 0
   dedScreen: {fileID: 1961415586172976, guid: afa5a62f95ca9984bb4e461e4d586407, type: 2}
   nextLevel: 1st_lvl
+  credits: {fileID: 1583820268016718, guid: e0695bda723563849b5bf875ee5c6822, type: 2}
 --- !u!212 &1159856804
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -532,6 +533,12 @@ Prefab:
       propertyPath: damageIndicator
       value: 
       objectReference: {fileID: 1604092746070440, guid: dffe826ace121474286c682d3ef1eff8,
+        type: 2}
+    - target: {fileID: 114773423052930786, guid: 01cf1b75222eec84cb83d4bdf8998a1a,
+        type: 2}
+      propertyPath: credits
+      value: 
+      objectReference: {fileID: 1583820268016718, guid: e0695bda723563849b5bf875ee5c6822,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01cf1b75222eec84cb83d4bdf8998a1a, type: 2}
