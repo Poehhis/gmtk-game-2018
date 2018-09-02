@@ -11,6 +11,7 @@ public class ActionController : MonoBehaviour {
     InitialiseActionButtons initialiseActionButtons;
     Stats stats;
     public GameObject dedScreen;
+	public string nextLevel;
     
     
     // Use this for initialization
@@ -65,28 +66,22 @@ public class ActionController : MonoBehaviour {
         //Handling of turns
         if (characterType == CharacterType.NPC)
         {
-            if (turnController.hero.GetComponent<Stats>().alive == false)
-            {
-
-                print("You have dieded");
-                GameObject newButton = Instantiate(dedScreen);
-                
-            }
-
-            else if (turnController.hero.GetComponent<Stats>().sneak == true) turnController.NextTurn();
-
-            else
-            {
-
-                stats.activeSkills.GetRandomElement().Activate(new GameObject[] { turnController.hero });
-                turnController.NextTurn();
-            }
+			if (turnController.hero.GetComponent<Stats>().alive == false)
+			{
+				print("You have dieded");
+				StartCoroutine(DeathScene());
+			}
+			else
+			{
+				StartCoroutine(EnemyAttack());
+			}
         }
         else
         {
             if (turnController.boss.GetComponent<Stats>().alive == false)
             {
                 print("You have wonnededed");
+				StartCoroutine(OutroScene());
             }
             else
             {
@@ -99,7 +94,64 @@ public class ActionController : MonoBehaviour {
     void SwapScene(GameObject[] o, string scene)
     {
         SceneManager.LoadScene(scene);
-    }
+	}
+
+	IEnumerator EnemyAttack()
+	{
+		yield return new WaitForSeconds(1f);
+
+		if (!turnController.hero.GetComponent<Stats>().sneak)
+		{
+			stats.activeSkills.GetRandomElement().Activate(new GameObject[] { turnController.hero });
+
+			yield return new WaitForSeconds(0.5f);
+		}
+
+		turnController.NextTurn();
+	}
+
+	IEnumerator OutroScene()
+	{
+		yield return new WaitForSeconds(1f);
+
+		if (SceneManager.GetActiveScene().name != "3rd_lvl")
+		{
+			GetComponent<Animator>().SetBool("IsWalking", true);
+
+			while (true)
+			{
+				transform.Translate(Time.deltaTime * 4f, 0f, 0f);
+
+				if (transform.position.x >= 11f)
+				{
+					GetComponent<Animator>().SetBool("IsWalking", false);
+					break;
+				}
+				yield return null;
+			}
+
+			SceneManager.LoadScene(nextLevel);
+		}
+		else
+		{
+			GetComponent<Animator>().applyRootMotion = false;
+			GetComponent<Animator>().SetTrigger("Win");
+		}
+	}
+
+	IEnumerator DeathScene()
+	{
+		yield return new WaitForSeconds(1f);
+
+		GameObject deathScreen = Instantiate(dedScreen);
+		SpriteRenderer sr = deathScreen.GetComponent<SpriteRenderer>();
+
+		while (true)
+		{
+			sr.color = Color.Lerp(sr.color, new Color(1f, 1f, 1f, 1f), Time.deltaTime);
+			yield return null;
+		}
+	}
 }
 public enum CharacterType
 {

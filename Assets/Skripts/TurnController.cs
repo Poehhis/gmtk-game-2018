@@ -56,16 +56,31 @@ public class TurnController : MonoBehaviour {
         players[0] = hero;
         players[1] = boss;
 
-        NextTurn();
+		StartCoroutine(IntroScene());
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
     public void NextTurn()
     {  
         iTurn = (iTurn + 1) % players.Length;
         players[iTurn].GetComponent<ActionController>().TakeTurn();
     }
+
+	IEnumerator IntroScene()
+	{
+		hero.GetComponent<Animator>().SetBool("IsWalking", true);
+
+		while(true)
+		{
+			hero.transform.Translate(Time.deltaTime * 4f, 0f, 0f);
+
+			if (hero.transform.position.x >= -2f)
+			{
+				hero.GetComponent<Animator>().SetBool("IsWalking", false);
+				break;
+			}
+			yield return null;
+		}
+
+		NextTurn();
+	}
 }

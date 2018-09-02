@@ -12,6 +12,7 @@ TextureImporter:
     21300014: hero_5
     21300016: hero_6
     21300018: hero_7
+    21300020: Hero_0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -249,6 +250,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6811c0055b6c012438d9452f31ee77d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d46755f644fae4e4fb2fe2532a27c025
       vertices: []
       indices: 
       edges: []

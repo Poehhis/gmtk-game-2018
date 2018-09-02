@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+	public GameObject damageIndicator;
+	float lastDITime;
+
     public bool alive = true;
     public bool shielded = false;
 
@@ -47,8 +50,10 @@ public class Stats : MonoBehaviour
     {
         get { return _currentHP; }
         set
-        {
-            _currentHP = value;
+		{
+			StartCoroutine(SpawnDI(value - currentHP));
+			_currentHP = value;
+
             if(_currentHP <= 0)
             {
                 _currentHP = 0;
@@ -60,11 +65,22 @@ public class Stats : MonoBehaviour
     }
     public Skill[] activeSkills;
 
-    
-
     private void Start()
     {
-        currentHP = maxHP;    
-    }
+        _currentHP = maxHP;
+		lastDITime = Time.realtimeSinceStartup;
+	}
 
+	IEnumerator SpawnDI(int value)
+	{
+		while(Time.realtimeSinceStartup - lastDITime < 0.5f)
+		{
+			yield return null;
+		}
+
+		lastDITime = Time.realtimeSinceStartup;
+		GameObject di = Instantiate(damageIndicator);
+		di.transform.position = new Vector3(transform.position.x, 2.75f, 0f);
+		di.GetComponent<DamageIndicatorController>().value = value;
+	}
 }
