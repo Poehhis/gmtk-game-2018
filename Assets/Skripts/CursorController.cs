@@ -38,11 +38,15 @@ public class CursorController : MonoBehaviour
 			pressed = false;
 		}
 
-		if(Input.GetButtonDown("SpellSlot1"))
+		if(Input.GetButtonDown("SpellSlot3"))
 		{
 			if(index == 0)
 			{
 				SceneManager.LoadScene("1st_lvl");
+			}
+			if(index == 1)
+			{
+				SceneManager.LoadScene("Instructions1");
 			}
 		}
 	}
