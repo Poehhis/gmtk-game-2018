@@ -394,6 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a79eedbb027f1a489f2323139c72160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageIndicator: {fileID: 1604092746070440, guid: dffe826ace121474286c682d3ef1eff8,
+    type: 2}
   alive: 1
   shielded: 0
   burning: 0
@@ -525,6 +527,12 @@ Prefab:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114453444815748472, guid: 01cf1b75222eec84cb83d4bdf8998a1a,
+        type: 2}
+      propertyPath: damageIndicator
+      value: 
+      objectReference: {fileID: 1604092746070440, guid: dffe826ace121474286c682d3ef1eff8,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01cf1b75222eec84cb83d4bdf8998a1a, type: 2}
   m_IsPrefabAsset: 0
