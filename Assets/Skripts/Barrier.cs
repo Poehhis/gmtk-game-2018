@@ -20,7 +20,8 @@ public class Barrier : Skill
     }
     public override void Activate(GameObject[] targets)
     {
-        user.GetComponent<Stats>().currentHP += barrAmount * countMultiplier;
+        user.GetComponent<Stats>().currentArm += barrAmount * countMultiplier;
+        user.GetComponent<Stats>().shielded = true;
         user.GetComponent<Animator>().SetTrigger("Attack");
     }
 }

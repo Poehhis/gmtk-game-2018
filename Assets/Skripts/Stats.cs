@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public bool alive = true;
+    public bool shielded = false;
 
     public bool burning = false;
     public int burnCounter = 0;
@@ -20,11 +21,29 @@ public class Stats : MonoBehaviour
     //public bool warcry = false;
     //public int warCounter = 0;
 
-    public bool barrier = false; 
+    public bool barrier = false;
 
+    //all init for Armor and handling
+    public int maxArm;
+    public int _currentArm;
+    public int currentArm
+    {
+        get { return _currentArm; }
+        set
+        {
+            _currentArm = value;
+            if (_currentArm <= 0)
+            {
+                _currentArm = 0;
+                shielded = false;
+            }
+        }
+    }
+
+    //all init for HP and handling
     public int maxHP;
     public int _currentHP;
-    public int currentHP
+    public int currentHP  
     {
         get { return _currentHP; }
         set
@@ -32,8 +51,10 @@ public class Stats : MonoBehaviour
             _currentHP = value;
             if(_currentHP <= 0)
             {
+                _currentHP = 0;
                 alive = false;
                 GetComponent<Animator>().SetTrigger("Die");
+                Debug.Log("ded");
             }
         }
     }

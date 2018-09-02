@@ -7,6 +7,7 @@ public class ButtonController : MonoBehaviour
     public delegate void OnPressedHandler(GameObject[] targets);
     public OnPressedHandler OnPressed;
     public string spellSlot;
+
     TurnController turnController;
     InitialiseActionButtons initialise;
     // Use this for initialization

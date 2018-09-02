@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActionController : MonoBehaviour {
 
@@ -8,6 +10,9 @@ public class ActionController : MonoBehaviour {
     TurnController turnController;
     InitialiseActionButtons initialiseActionButtons;
     Stats stats;
+    public GameObject dedScreen;
+    
+    
     // Use this for initialization
     void Start () {
         turnController = Camera.main.GetComponent<TurnController>();
@@ -62,7 +67,10 @@ public class ActionController : MonoBehaviour {
         {
             if (turnController.hero.GetComponent<Stats>().alive == false)
             {
+
                 print("You have dieded");
+                GameObject newButton = Instantiate(dedScreen);
+                
             }
 
             else if (turnController.hero.GetComponent<Stats>().sneak == true) turnController.NextTurn();
@@ -86,6 +94,11 @@ public class ActionController : MonoBehaviour {
             }
         }
         print(GetComponent<Stats>().currentHP);
+    }
+
+    void SwapScene(GameObject[] o, string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }
 public enum CharacterType
