@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ReSpriter : MonoBehaviour
 {
+
 	public Class hat;
 	public Class shirt;
 	public Class hands;

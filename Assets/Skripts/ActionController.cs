@@ -85,6 +85,7 @@ public class ActionController : MonoBehaviour {
                 initialiseActionButtons.Initialise(GetComponent<Stats>().activeSkills);
             }
         }
+        print(GetComponent<Stats>().currentHP);
     }
 }
 public enum CharacterType

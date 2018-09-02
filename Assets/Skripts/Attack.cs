@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Attack : Skill
-{   //skilltype 1=buff/debuff 2=defencive 3=attack
-    int skillType = 3;
+{
+    int lvlMult;
+    int couMult;
     int commonDmg = 50;
 
     public Attack(GameObject user) : base(user)

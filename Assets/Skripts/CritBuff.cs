@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CritBuff : Skill
 {
-    int skillType = 2;
+    int lvlMult;
+    int couMult;
     public int dmgMulti = 2;
 
     public CritBuff(GameObject user) : base(user)
@@ -23,6 +24,6 @@ public class CritBuff : Skill
         user.GetComponent<Animator>().SetTrigger("Attack");
         user.GetComponent<Stats>().crit = true;
         user.GetComponent<Stats>().critCount = 1;
-        user.GetComponent<Stats>().critMulti = dmgMulti;
+        user.GetComponent<Stats>().critMulti = dmgMulti*countMultiplier;
     }
 }

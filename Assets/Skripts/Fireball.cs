@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fireball : Skill
 {
-    int skillType = 3;
+    int lvlMult;
     public int initDmg = 75;
 
     public Fireball(GameObject user) : base(user)
@@ -21,7 +21,7 @@ public class Fireball : Skill
 
     public override void Activate(GameObject[] targets)
     {
-        targets[0].GetComponent<Stats>().currentHP -= (int)(initDmg * user.GetComponent<Stats>().critMulti);
+        targets[0].GetComponent<Stats>().currentHP -= (int)(initDmg * user.GetComponent<Stats>().critMulti * countMultiplier);
         targets[0].GetComponent<Stats>().burning = true;
         targets[0].GetComponent<Stats>().burnCounter = 3;
         user.GetComponent<Animator>().SetTrigger("Attack");

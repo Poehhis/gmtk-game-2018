@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Warcry : Skill {
 
-    double dmgMulti = 1.33;
+    int lvlMult;
+    double dmgMulti = 0.33;
 
     public Warcry(GameObject user) : base(user)
     {
@@ -23,7 +24,7 @@ public class Warcry : Skill {
         user.GetComponent<Animator>().SetTrigger("Attack");
         user.GetComponent<Stats>().crit = true;
         user.GetComponent<Stats>().critCount = 3;
-        user.GetComponent<Stats>().critMulti = dmgMulti;
+        user.GetComponent<Stats>().critMulti = 1 + (dmgMulti * countMultiplier);
     }
 
    

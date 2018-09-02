@@ -11,6 +11,7 @@ public abstract class Skill
     }
     public abstract Class ClassId { get; }
     public abstract void Activate(GameObject[] targets);
+    public int countMultiplier = 1;
 }
 
 public enum Class
