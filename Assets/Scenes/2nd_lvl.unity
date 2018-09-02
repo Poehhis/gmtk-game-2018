@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 103318211}
   - component: {fileID: 103318210}
   m_Layer: 0
-  m_Name: Plains
+  m_Name: Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: 0a5e0e047b06a15458958d9c6070aa5e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c481c9eae8dafb645bbc5fc8563cf393, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 861894809}
   - component: {fileID: 861894810}
   m_Layer: 0
-  m_Name: PlainsFront
+  m_Name: EntranceFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,7 +279,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 6065bf7ca4048f04382399845668936b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3fce364fdf0562442970debb898cfbb0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterType: 0
   dedScreen: {fileID: 1961415586172976, guid: afa5a62f95ca9984bb4e461e4d586407, type: 2}
-  nextLevel: 2nd_lvl
+  nextLevel: 3rd_lvl
 --- !u!212 &1159856804
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c9822e2a502e754683c0a97e551bfcc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2647e3984a73ff34c95c3c95a95d90de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -404,9 +404,9 @@ MonoBehaviour:
   critMulti: 1
   critCount: 0
   barrier: 0
-  maxArm: 1000
+  maxArm: 1500
   _currentArm: 0
-  maxHP: 1000
+  maxHP: 1500
   _currentHP: 0
 --- !u!95 &1159856807
 Animator:
@@ -417,7 +417,7 @@ Animator:
   m_GameObject: {fileID: 1159856802}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 473855fb7b6f1e741908640c348a0add, type: 2}
+  m_Controller: {fileID: 9100000, guid: 62c056e2247c7174dbba8fdac4228e45, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -518,7 +518,7 @@ Prefab:
     - target: {fileID: 114773423052930786, guid: 01cf1b75222eec84cb83d4bdf8998a1a,
         type: 2}
       propertyPath: nextLevel
-      value: 2nd_lvl
+      value: 3rd_lvl
       objectReference: {fileID: 0}
     - target: {fileID: 95980152666099504, guid: 01cf1b75222eec84cb83d4bdf8998a1a,
         type: 2}

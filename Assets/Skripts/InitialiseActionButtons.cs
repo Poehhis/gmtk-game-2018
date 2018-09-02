@@ -53,6 +53,15 @@ public class InitialiseActionButtons : MonoBehaviour
         }
         
     }
+
+	public void Deactivate()
+	{
+		for (int j = 0; j < buttons.Count; j++)
+		{
+			buttons[j].GetComponent<ButtonController>().activated = true;
+		}
+	}
+
     public void Trash()
     {
         for (int j = 0; j < buttons.Count; j++)
