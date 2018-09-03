@@ -15,7 +15,7 @@ public class CursorController : MonoBehaviour
 
 	void Start ()
 	{
-		
+		Screen.sleepTimeout = SleepTimeout.SystemSetting;
 	}
 	
 	void Update ()

@@ -135,6 +135,8 @@ public class ActionController : MonoBehaviour {
 		}
 		else
 		{
+			Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
 			GetComponent<Animator>().applyRootMotion = false;
 			GetComponent<Animator>().SetTrigger("Win");
 
