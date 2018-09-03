@@ -13,6 +13,11 @@ public class SceneChanger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("SpellSlot3") || Input.GetMouseButtonDown(0)) SceneManager.LoadScene(scene);
+		if (Input.GetButtonDown("SpellSlot3") ||
+			(Input.GetMouseButtonDown(0) && Input.touchCount == 0) ||
+			(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+		{
+			SceneManager.LoadScene(scene);
+		}
 	}
 }
