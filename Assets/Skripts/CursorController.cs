@@ -24,21 +24,34 @@ public class CursorController : MonoBehaviour
 		{
 			pressed = true;
 			index = (index + 1) % 2;
-			transform.position = new Vector3(0.5f, positions[index], 0f);
 		}
 		else if (Input.GetAxisRaw("Vertical") < 0 && !pressed)
 		{
 			pressed = true;
 			index--;
 			if (index < 0) index = 1;
-			transform.position = new Vector3(0.5f, positions[index], 0f);
 		}
 		else if(Input.GetAxisRaw("Vertical") == 0 && pressed)
 		{
 			pressed = false;
 		}
 
-		if(Input.GetButtonDown("SpellSlot3"))
+		//Mouse input
+		Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		if (Mathf.Abs(mouse.x - 3f) < 2f && Mathf.Abs(mouse.y + 2.25f) < 0.5f)
+		{
+			index = 0;
+		}
+		else if (Mathf.Abs(mouse.x - 3.5f) < 2.5f && Mathf.Abs(mouse.y + 4f) < 0.5f)
+		{
+			index = 1;
+		}
+		else
+		{
+			index = -1;
+		}
+
+		if (Input.GetButtonDown("SpellSlot3") || Input.GetMouseButtonDown(0))
 		{
 			if(index == 0)
 			{
@@ -48,6 +61,15 @@ public class CursorController : MonoBehaviour
 			{
 				SceneManager.LoadScene("Instructions1");
 			}
+		}
+
+		if(index >= 0)
+		{
+			transform.position = new Vector3(0.5f, positions[index], 0f);
+		}
+		else
+		{
+			transform.position = new Vector3(mouse.x, mouse.y, 0f);
 		}
 	}
 }

@@ -19,8 +19,13 @@ public class ButtonController : MonoBehaviour
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (Input.GetButtonDown(spellSlot) && !activated)
+	void Update ()
+	{
+		Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (!activated && (Input.GetButtonDown(spellSlot) ||
+			(Mathf.Abs(mouse.x - transform.position.x) < 1f && Mathf.Abs(mouse.y - transform.position.y) < 1.5f &&
+			Input.GetMouseButtonDown(0))))
         {
 			initialise.Deactivate();
 			StartCoroutine(Active());
